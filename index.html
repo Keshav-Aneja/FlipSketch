@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="Assets/pencil.png" type="image/x-icon" />
+    <title>Flip Sketch</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <div class="headline"></div>
+    <div class="container">
+      <header>
+        <img src="Assets/logo-grad.png" alt="FlipSketch" />
+        <button class="about">About Creator</button>
+      </header>
+      <br />
+      <div class="content">
+        <section class="drawing">
+          <canvas id="draw"></canvas>
+        </section>
+        <section class="tools">
+          <span>
+            <button class="item active">
+              <img src="Assets/pencil.png" alt="" />
+              <p>Pencil</p>
+            </button>
+
+            <button class="item">
+              <img src="Assets/eraser.png" alt="" />
+              <p>Eraser</p>
+            </button> </span
+          ><span>
+            <button class="item shapes">
+              <img src="Assets/Shapes.png" alt="" />
+              <p>Shapes</p>
+              <span class="arrow"></span>
+              <span class="panel"
+                ><img src="Assets/square.png" alt="" /><img
+                  src="Assets/circle.png"
+                  alt=""
+                  class="active-b" /><img src="Assets/triangle.png" alt=""
+              /></span></button
+            ><button class="item">
+              <img src="Assets/paint-bucket.png" alt="" />
+              <p>Paint Fill</p>
+            </button> </span
+          ><span>
+            <button class="item texts">
+              <img src="Assets/text-size.png" alt="" />
+              <p>Text</p>
+              <span class="arrow2"></span>
+              <span class="textPanel"
+                ><span class="vert"
+                  >T<br />
+                  e<br />
+                  x<br />t</span
+                >
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+              </span></button
+            ><button class="item">
+              <a href="" class="dwn"
+                ><img src="Assets/download.png" alt=""
+              /></a>
+              <p>Download</p>
+            </button>
+          </span>
+          <span class="weights">
+            <img src="Assets/line-adjustment.png" alt="" />
+            <select id="dropdown">
+              <option value="10">Low</option>
+              <option value="30" id="med">Medium</option>
+              <option value="60" id="hi">High</option>
+            </select>
+          </span>
+          <input type="range" name="" id="seeker" min="20" max="200" step="5" />
+          <div class="colorbar">
+            <!-- <input type="color" value="#9fde54" id="colorSelector" /> -->
+
+            <section class="colorPalette">
+              <span>
+                <span class="color active" data-key="#f6ce1b"></span>
+                <span class="color" data-key="#9fde54"></span>
+                <span class="color" data-key="#ff9eaa"></span>
+                <span class="color" data-key="#4fc0d0"></span>
+              </span>
+              <span>
+                <span class="color" data-key="#f86f03"></span>
+                <span class="color" data-key="#9575de"></span>
+                <span class="color" data-key="#ffffff"></span>
+                <span class="color" data-key="#262626"></span>
+              </span>
+            </section>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="overlayScreen"></div>
+    <div class="aboutCard">
+      <section class="aboutHead-img"></section>
+      <section class="aboutContent">
+        <h2>Keshav Aneja</h2>
+        <p>
+          CSE '26 || Loves to Code <br />
+          Graphic Designing is ❣️ <br />
+          Currently Learning Frontend Web Dev & Machine Learning <br />
+        </p>
+      </section>
+      <button class="read">
+        Connect
+        <a href="https://www.linkedin.com/in/keshav-aneja" target="_blank"
+          ><img src="Assets/social0.png" alt="" /></a
+        ><a href="https://twitter.com/Keshav__Aneja" target="_blank"
+          ><img src="Assets/social1.png" alt="" /></a
+        ><a href="https://www.instagram.com/k.aneja09/" target="_blank"
+          ><img src="Assets/social2.png" alt=""
+        /></a>
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
