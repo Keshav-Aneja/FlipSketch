@@ -51,12 +51,21 @@
               <p>Text</p>
               <span class="arrow2"></span>
               <span class="textPanel"
-                ><span class="vert"
-                  >T<br />
-                  e<br />
-                  x<br />t</span
-                >
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                ><span>
+                  <span class="vert"
+                    >T<br />
+                    e<br />
+                    x<br />t</span
+                  >
+                  <textarea name="" id="" cols="30" rows="10"></textarea>
+                </span>
+                <select id="fontFamily">
+                  <option value="Courier New">Courier New</option>
+                  <option value="Times New Roman">Times New Roman</option>
+                  <option value="Arial">Arial</option>
+                  <option value="serif">serif</option>
+                  <option value="monospace">monospace</option>
+                </select>
               </span></button
             ><button class="item">
               <a href="" class="dwn"
@@ -73,6 +82,7 @@
               <option value="60" id="hi">High</option>
             </select>
           </span>
+
           <input type="range" name="" id="seeker" min="20" max="200" step="5" />
           <div class="colorbar">
             <!-- <input type="color" value="#9fde54" id="colorSelector" /> -->
@@ -92,6 +102,7 @@
               </span>
             </section>
           </div>
+          <button class="reset">Reset Canvas</button>
         </section>
       </div>
     </div>

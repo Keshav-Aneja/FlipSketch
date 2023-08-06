@@ -15,6 +15,7 @@ let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
 let lineColor = "#9fde54";
+const weightPanel = document.querySelector(".weights");
 let activeColorItem = colorItem[0];
 let activeMenuItem = menuItems[0];
 let activeBackground = "#fff";
@@ -34,6 +35,11 @@ colorItem.forEach((color) => {
   });
 });
 let prevItem;
+let activeFont = "Arimo";
+const fontSelector = document.getElementById("fontFamily");
+fontSelector.addEventListener("change", function () {
+  activeFont = fontSelector.value;
+});
 
 menuItems.forEach((item) => {
   item.addEventListener("click", function () {
@@ -51,9 +57,13 @@ menuItems.forEach((item) => {
     }
     if (activeMenuItem === menuItems[0]) {
       canvas.style.cursor = `url("Assets/ICON-${0}.ico"), pointer`;
+      weightPanel.style.display = "flex";
+      seeker.style.display = "none";
     }
     if (activeMenuItem === menuItems[1]) {
       canvas.style.cursor = `url("Assets/ICON-${1}.ico"), pointer`;
+      weightPanel.style.display = "flex";
+      seeker.style.display = "none";
     }
     if (activeMenuItem === menuItems[3]) {
       canvas.style.cursor = `url("Assets/ICON-${3}.ico"), pointer`;
@@ -61,27 +71,37 @@ menuItems.forEach((item) => {
     if (activeMenuItem === menuItems[2]) {
       overlay.style.opacity = 1;
       tri.style.opacity = 1;
+      overlay.style.zIndex = 10;
       canvas.style.cursor = `url("Assets/ICON-${2}.ico"), pointer`;
+      weightPanel.style.display = "none";
+      seeker.style.display = "block";
       // seeker.disabled = false;
       // seeker.style.backgroundColor = "#668cd3";
     }
     if (activeMenuItem !== menuItems[2]) {
       overlay.style.opacity = 0;
       tri.style.opacity = 0;
+      overlay.style.zIndex = -1;
       // seeker.disabled = true;
       // seeker.style.backgroundColor = "grey";
     }
     if (activeMenuItem === menuItems[4]) {
       document.querySelector(".textPanel").style.opacity = 1;
       document.querySelector(".arrow2").style.opacity = 1;
+      document.querySelector(".textPanel").style.zIndex = 10;
       canvas.style.cursor = `url("Assets/ICON-${4}.ico"), pointer`;
+      weightPanel.style.display = "none";
+      seeker.style.display = "block";
       // seeker.disabled = false;
       // seeker.style.backgroundColor = "#668cd3";
     }
     if (activeMenuItem !== menuItems[4]) {
       document.querySelector(".textPanel").style.opacity = 0;
+      document.querySelector(".textPanel").style.zIndex = -1;
       document.querySelector(".arrow2").style.opacity = 0;
       textArea.value = "";
+      seeker.value = "40";
+      shapeSize = 40;
       // seeker.disabled = true;
       // seeker.style.backgroundColor = "grey";
     }
@@ -182,7 +202,7 @@ function writeText(e) {
   lastX = x;
   lastY = y;
   ctx.fillStyle = activeColor;
-  ctx.font = `${shapeSize}px Arimo`;
+  ctx.font = `${shapeSize}px ${activeFont}`;
   ctx.textAlign = "center";
   ctx.fillText(textInput, lastX, lastY);
 }
@@ -229,7 +249,6 @@ function saveCanvasAsPNG() {
   // Create a temporary anchor element to trigger the download
   downloadBtn.href = dataURL;
   downloadBtn.download = "drawing.png"; // File name for the downloaded image
-  downloadBtn.click();
 }
 
 downloadBtn.addEventListener("click", saveCanvasAsPNG);
@@ -250,4 +269,9 @@ document.addEventListener("keydown", function (e) {
     overlayScrn.style.display = "none";
     aboutCard.style.display = "none";
   }
+});
+
+const resetBtn = document.querySelector(".reset");
+resetBtn.addEventListener("click", function () {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 });

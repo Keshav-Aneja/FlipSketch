@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Vithkuqi:wght@400;500;600;700&family=Playfair+Display:wght@600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -201,21 +202,36 @@ input[type="color"]::-moz-color-swatch {
   padding: 5px;
   border-radius: 10px;
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 0.3s ease;
+  z-index: -1;
 }
 .textPanel {
   width: 200px;
-  height: 120px;
+  height: 150px;
   background-color: var(--secondary);
   position: absolute;
   left: -210px;
   top: 5px;
-  padding: 5px;
+  padding: 10px;
   border-radius: 10px;
   opacity: 0;
-  transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.43);
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.textPanel > span {
+  width: 100%;
+  height: 80%;
+}
+.textPanel select {
+  background-color: white;
+  border: 0px;
+  border-radius: 10px;
+  padding: 5px;
 }
 .vert {
   font-size: 1.5rem;
@@ -240,7 +256,7 @@ input[type="color"]::-moz-color-swatch {
   left: -30px;
   top: 25px;
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 0.3s ease;
 }
 .arrow2 {
   width: 30px;
@@ -251,7 +267,7 @@ input[type="color"]::-moz-color-swatch {
   left: -30px;
   top: 25px;
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 0.3s ease;
 }
 .panel img {
   width: 33%;
@@ -271,6 +287,7 @@ input[type="color"]::-moz-color-swatch {
   height: 5px;
   border-radius: 50px;
   box-shadow: 0px 0px 20px white;
+  display: none;
 }
 
 #seeker::-moz-range-thumb {
@@ -386,4 +403,23 @@ input[type="color"]::-moz-color-swatch {
   background-color: white;
   border: 3px solid rgb(0, 115, 255);
   color: #252525;
+}
+
+.reset {
+  background-color: var(--secondary);
+  color: white;
+  font-family: "Arimo", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  padding: 10px;
+  border: 0px;
+  border-radius: 20px;
+  width: 80%;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.reset:hover {
+  background-color: #486cb0;
+}
+.reset:active {
+  transform: translate(5px, 5px) scale(0.8);
 }
