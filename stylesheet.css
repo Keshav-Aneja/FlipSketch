@@ -76,6 +76,7 @@ header img {
 .tools {
   width: 15%;
   height: 100%;
+  padding: 10px;
   background-color: white;
   border-radius: 2.5rem;
   display: flex;
@@ -119,18 +120,19 @@ header img {
   transition: 0.3s ease;
 }
 .weights img {
-  width: 40%;
+  width: 35%;
   height: 100%;
 }
 #dropdown {
   height: 80px;
   border: 0px;
+  width: 40%;
   background-color: var(--primary);
   font-size: 1.2rem;
   font-family: "Arimo", sans-serif;
 }
 option {
-  padding: 20px;
+  padding: 10px;
 }
 .weights:hover {
   box-shadow: 8px 8px 28px rgba(0, 0, 0, 0.13);
@@ -409,7 +411,7 @@ input[type="color"]::-moz-color-swatch {
   background-color: var(--secondary);
   color: white;
   font-family: "Arimo", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 900;
   padding: 10px;
   border: 0px;
