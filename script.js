@@ -282,4 +282,5 @@ document.addEventListener("keydown", function (e) {
 const resetBtn = document.querySelector(".reset");
 resetBtn.addEventListener("click", function () {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  activeBackground = "white";
 });
