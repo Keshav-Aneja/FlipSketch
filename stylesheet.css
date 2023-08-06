@@ -422,6 +422,56 @@ input[type="color"]::-moz-color-swatch {
 .reset:hover {
   background-color: #486cb0;
 }
-.reset:active {
+.reset:active,
+.warning button:active {
   transform: translate(5px, 5px) scale(0.8);
+}
+.warning {
+  width: 25vw;
+  height: 12vw;
+  background-color: var(--primary);
+  border-radius: 20px;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  color: var(--secondary);
+  font-family: Arimo, Arial;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.23);
+}
+.warning span {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.warning button {
+  width: 45%;
+  height: 40px;
+  border: 0px;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.yes {
+  background-color: rgb(90, 212, 14);
+}
+.yes:hover {
+  background-color: var(--primary);
+  border: 4px solid rgb(90, 212, 14);
+  color: #262626;
+}
+.no {
+  background-color: rgb(254, 90, 8);
+}
+.no:hover {
+  background-color: var(--primary);
+  border: 4px solid rgb(254, 90, 8);
+  color: #262626;
 }

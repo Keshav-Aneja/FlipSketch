@@ -24,6 +24,7 @@ let activePanelItem = panel[1];
 let activeColor = activeColorItem.getAttribute("data-key");
 let shapeSize = 40;
 const downloadBtn = document.querySelector(".dwn");
+const yesBtn = document.querySelector(".yes");
 const seeker = document.querySelector("#seeker");
 colorItem.forEach((color) => {
   color.style.backgroundColor = color.getAttribute("data-key");
@@ -206,13 +207,20 @@ function writeText(e) {
   ctx.textAlign = "center";
   ctx.fillText(textInput, lastX, lastY);
 }
+yesBtn.addEventListener("click", function (e) {
+  paint(e);
+  document.querySelector(".warning").style.display = "none";
+});
+document.querySelector(".no").addEventListener("click", function () {
+  document.querySelector(".warning").style.display = "none";
+});
 canvas.addEventListener("mousedown", (e) => {
   isDrawing = true;
   const { x, y } = getMousePos(e);
   lastX = x;
   lastY = y;
   if (activeMenuItem === menuItems[3]) {
-    paint(e);
+    document.querySelector(".warning").style.display = "flex";
   } else if (activeMenuItem === menuItems[2]) {
     drawShape(e);
   } else if (activeMenuItem === menuItems[4]) {
