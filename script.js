@@ -182,7 +182,7 @@ function writeText(e) {
   lastX = x;
   lastY = y;
   ctx.fillStyle = activeColor;
-  ctx.font = `${shapeSize}px Poppins`;
+  ctx.font = `${shapeSize}px Arimo`;
   ctx.textAlign = "center";
   ctx.fillText(textInput, lastX, lastY);
 }
